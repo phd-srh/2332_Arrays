@@ -40,11 +40,36 @@ public class Main {
         // Aufgabe 1:
         // Erstellen Sie ein int-Array mit 10 Elementen mit den
         // Werten 101 bis 110.
-
+        int[] intArray = new int[10];
+        for (int i=0; i < intArray.length; i++)
+            intArray[i] = 101+i;
 
         // Aufgabe 2:
         // Lassen Sie das int-Array mit seinen einzelnen Elementen
         // ausgeben, in eine hübschen Form, z.B. "[101, 102, 103, ..., 110]"
+        // -> das lagern wir mal in eine Methode aus!!
+        ausgabe( intArray );
+        ausgabe( x );
 
+        int[] datensätze = { 45, 23, 9, 33, 27, 3, 109, 44, 47, 12 };
+        ausgabe( datensätze );
+
+        // Aufgabe 3:
+        // Durchsuchen Sie ein Array und finden das kleinste Elemente darin,
+        // geben es als Rückgabewert zurück
+
+        // Aufgabe 4:
+        // Durchsuchen Sie ein Array und finden das größte Elemente darin,
+        // geben es als Rückgabewert zurück
+
+    }
+
+    private static void ausgabe( int[] array ) {
+        System.out.print("[");
+        for (int i=0; i < array.length; i++) {
+            if (i > 0) System.out.print(", ");
+            System.out.print(array[i]);
+        }
+        System.out.println("]");
     }
 }
