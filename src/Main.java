@@ -63,6 +63,8 @@ public class Main {
                 findeElementImArray(datensätze, 17));
         System.out.println("Ist das Element 33 im Array? " +
                 findeElementImArray(datensätze, 33));
+
+        int[] modifizierteDatensätz = entferneElementAusArray(datensätze, 33);
     }
 
     // Aufgabe 3:
@@ -103,8 +105,37 @@ public class Main {
     // Eine Methode, das ein neues Array erstellt aus einem übergebenen
     // Array ohne der Zahl, die noch zusätzlich übergeben wird
     public static int[] entferneElementAusArray(int[] array, int zuEntfernendeWert) {
+        int längeDesNeuenArrays = array.length;
+        if ( findeElementImArray(array, zuEntfernendeWert) )
+            längeDesNeuenArrays--;
+//      Alternative mit dem tenären Operator:
+//        int längeDesNeuenArrays = findeElementImArray(array, zuEntfernendeWert)
+//                ? array.length - 1
+//                : array.length;
+        int[] neuesArray = new int[ längeDesNeuenArrays ];
+        int neuerIndex = 0;
+        for (int element : array) {
+            if (element != zuEntfernendeWert) {
+                neuesArray[neuerIndex] = element;
+                neuerIndex++;
+            }
+        }
+        return neuesArray;
+    }
+
+    // Aufgabe 7
+    // Eine Methode, die feststellt, ob ein Array in aufsteigender
+    // Sortierung vorliegt
+    public static boolean istArraySortiert(int[] array) {
         // TODO
-        return array; // <- falsch, nur damit Java nicht meckert
+        return false;
+    }
+
+    // Aufgabe 8
+    // Eine Methode, die ein übergebenens Array aufsteigend sortiert!
+    public static int[] sortiereArray(int[] array) {
+        // TODO
+        return array;
     }
 
     private static void ausgabe( int[] array ) {
