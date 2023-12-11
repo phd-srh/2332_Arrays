@@ -58,6 +58,11 @@ public class Main {
                 findeKleinstesElementImArray(datensätze));
         System.out.println("Das größte Element ist " +
                 findeGrößtesElementImArray(datensätze));
+
+        System.out.println("Ist das Element 17 im Array? " +
+                findeElementImArray(datensätze, 17));
+        System.out.println("Ist das Element 33 im Array? " +
+                findeElementImArray(datensätze, 33));
     }
 
     // Aufgabe 3:
@@ -87,7 +92,20 @@ public class Main {
     // Aufgabe 5:
     // Eine Methode, das ein bestimmtes Element im Array findet
     // und ein Boolean zurückgibt, ob es gefunden wurde oder nicht
+    public static boolean findeElementImArray(int[] array, int gesuchterWert) {
+        for (int element : array) {
+            if (element == gesuchterWert) return true;
+        }
+        return false;
+    }
 
+    // Aufgabe 6:
+    // Eine Methode, das ein neues Array erstellt aus einem übergebenen
+    // Array ohne der Zahl, die noch zusätzlich übergeben wird
+    public static int[] entferneElementAusArray(int[] array, int zuEntfernendeWert) {
+        // TODO
+        return array; // <- falsch, nur damit Java nicht meckert
+    }
 
     private static void ausgabe( int[] array ) {
         System.out.print("[");
