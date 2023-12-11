@@ -65,6 +65,17 @@ public class Main {
                 findeElementImArray(datensätze, 33));
 
         int[] modifizierteDatensätz = entferneElementAusArray(datensätze, 33);
+
+        System.out.println("Sind die Datensätze sortiert? " +
+                istArraySortiert(datensätze));
+
+        int[] sortierteDatensätz = sortiereArray(datensätze);
+        ausgabe(sortierteDatensätz);
+
+        int[] nochMehrDatensätze = { 15, 23, 19, 33, 5, 108, 48, 13, 7 };
+        System.out.println("Die beiden Arrays haben " +
+                zähleGleicheElemente(datensätze, nochMehrDatensätze) +
+                " gleiche Elemente");
     }
 
     // Aufgabe 3:
@@ -127,15 +138,30 @@ public class Main {
     // Eine Methode, die feststellt, ob ein Array in aufsteigender
     // Sortierung vorliegt
     public static boolean istArraySortiert(int[] array) {
-        // TODO
-        return false;
+        for (int i = 0; i <array.length-1; i++) {
+            if (array[i] > array[i+1])
+                return false;
+        }
+        return true;
     }
 
     // Aufgabe 8
     // Eine Methode, die ein übergebenens Array aufsteigend sortiert!
     public static int[] sortiereArray(int[] array) {
+        int[] sortiertesArray = new int[ array.length ];
+        for (int i = 0; i < sortiertesArray.length; i++) {
+            sortiertesArray[i] = findeKleinstesElementImArray(array);
+            array = entferneElementAusArray(array, sortiertesArray[i]);
+        }
+        return sortiertesArray;
+    }
+
+    // Aufgabe 9 (Weihnachtsaufgabe)
+    // Zähle die identischen Elementen, die in beiden Arrays (a und b)
+    // vorkommen
+    public static int zähleGleicheElemente(int[] a, int[] b) {
         // TODO
-        return array;
+        return 0;
     }
 
     private static void ausgabe( int[] array ) {
