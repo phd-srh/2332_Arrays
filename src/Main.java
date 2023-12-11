@@ -56,8 +56,8 @@ public class Main {
 
         System.out.println("Das kleines Element ist " +
                 findeKleinstesElementImArray(datensätze));
-
-
+        System.out.println("Das größte Element ist " +
+                findeGrößtesElementImArray(datensätze));
     }
 
     // Aufgabe 3:
@@ -65,9 +65,9 @@ public class Main {
     // geben es als Rückgabewert zurück
     public static int findeKleinstesElementImArray( int[] array ) {
         int dasKleinsteElement = Integer.MAX_VALUE;
-        for (int i=0; i < array.length; i++) {
-            if (array[i] < dasKleinsteElement)
-                dasKleinsteElement = array[i];
+        for (int element : array) {
+            if (element < dasKleinsteElement)
+                dasKleinsteElement = element;
         }
         return dasKleinsteElement;
     }
@@ -75,6 +75,18 @@ public class Main {
     // Aufgabe 4:
     // Durchsuchen Sie ein Array und finden das größte Elemente darin,
     // geben es als Rückgabewert zurück
+    public static int findeGrößtesElementImArray( int [] array ) {
+        int dasGrößteElement = Integer.MIN_VALUE;
+        for (int element : array) {
+            if (element > dasGrößteElement)
+                dasGrößteElement = element;
+        }
+        return dasGrößteElement;
+    }
+
+    // Aufgabe 5:
+    // Eine Methode, das ein bestimmtes Element im Array findet
+    // und ein Boolean zurückgibt, ob es gefunden wurde oder nicht
 
 
     private static void ausgabe( int[] array ) {
